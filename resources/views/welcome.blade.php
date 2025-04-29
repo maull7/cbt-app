@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold underline">
+    <h1 class="text-3xl font-bold text-gray-500">
         Hello world!
     </h1>
 </body>
