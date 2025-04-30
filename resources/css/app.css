@@ -1,2 +1,24 @@
 @import "tailwindcss";
 @source "../views";
+@plugin "daisyui";
+
+@theme {
+    --color-light-blue-custom: #eaf2ff;
+    --color-blue-custom: #1463ff;
+    --color-black-custom: #222222;
+    --color-gray-custom: #b0b0b0;
+    --color-light-gray-custom: #f2f2f2;
+    --color-red-custom: #ff3b30;
+    --color-green-custom: #4caf50;
+    ----color-yellow-custom: #ffd700;
+    --color-white-custom: #ffffff;
+}
+
+@layer base {
+    body {
+        @apply bg-light-blue-custom;
+    }
+    .active {
+        @apply bg-light-blue-custom;
+    }
+}

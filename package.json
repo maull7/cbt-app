@@ -7,11 +7,13 @@
     },
     "devDependencies": {
         "axios": "^1.6.4",
+        "daisyui": "^5.0.30",
         "laravel-vite-plugin": "^1.0",
         "vite": "^5.0"
     },
     "dependencies": {
         "@tailwindcss/vite": "^4.1.4",
+        "chart.js": "^4.4.9",
         "tailwindcss": "^4.1.4"
     }
 }
