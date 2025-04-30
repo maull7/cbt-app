@@ -104,7 +104,7 @@
                 </div>
                 {{-- Bagian Card --}}
 
-                {{-- Bagian Nilai --}}
+                {{-- Bagian Chart Nilai --}}
                 <div class="grid grid-cols-1 mt-5">
                     <div class="card w-auto bg-white-custom shadow-sm">
                         <div class="card-body">
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- Bagian Nilai --}}
+                {{-- Bagian Chart Nilai --}}
             </div>
         </div>
         {{-- content --}}
