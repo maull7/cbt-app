@@ -7,7 +7,7 @@
     </div>
     <div class="flex flex-col">
         <!-- Sidebar content here -->
-        <li class=" active rounded-sm"><a class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-chart-line"></i>Dhasboard</a></li>
+        <li class=" active rounded-sm"><a href="/" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-chart-line"></i>Dhasboard</a></li>
         <li><a class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-book"></i>Ujian</a></li>
         <li><a class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-regular fa-file-lines"></i>Soal Ujian</a></li>
         <li><a class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-regular fa-clock"></i>Sesi Ujian</a></li>
