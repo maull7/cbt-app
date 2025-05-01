@@ -82,7 +82,7 @@
                                     <div id="editor"></div>
                                 </div>
                                 <div class="pt-4 flex gap-1 flex-wrap">
-                                    <button type="submit" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-floppy-disk text-white-custom"></i>Simpan Perubahan</button>
+                                    <button type="submit" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-floppy-disk text-white-custom"></i>Simpan</button>
                                     <a href="/data-ujian">
                                         <button type="submit" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-circle-xmark text-white-custom"></i>Batal</button>
                                     </a>
