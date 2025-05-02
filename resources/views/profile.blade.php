@@ -79,9 +79,9 @@
                                     </div>
                                 </div>
                                 <div class="pt-4 flex gap-1 flex-wrap">
-                                    <button type="submit" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-floppy-disk text-white-custom"></i>Simpan Perubahan</button>
+                                    <button id="simpan" type="submit" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-floppy-disk text-white-custom"></i>Simpan Perubahan</button>
                                     <a href="/">
-                                        <button type="submit" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-circle-xmark text-white-custom"></i>Batal</button>
+                                        <button id="batal" type="submit" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-circle-xmark text-white-custom"></i>Batal</button>
                                     </a>
                                 </div>
                             </form>
@@ -106,5 +106,29 @@
         });
     </script>
     {{-- script toggle password --}}
+
+    {{-- sweetalert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const simpan = document.getElementById('simpan');
+        const batal = document.getElementById('batal');
+        simpan.addEventListener('click', () => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Data berhasil disimpan',
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true
+            }).then(() => {
+                window.location.href = '/';
+            });
+        });
+
+        batal.addEventListener('click', () => {
+            window.location.href = '/';
+        });
+    </script>
+    {{-- sweetalert --}}
 </body>
 </html>

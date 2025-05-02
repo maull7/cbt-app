@@ -82,9 +82,9 @@
                                     <div id="editor"></div>
                                 </div>
                                 <div class="pt-4 flex gap-1 flex-wrap">
-                                    <button type="submit" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-floppy-disk text-white-custom"></i>Simpan</button>
+                                    <button type="submit" class="btn bg-blue-custom text-white-custom" id="simpan"><i class="fa-regular fa-floppy-disk text-white-custom"></i>Simpan</button>
                                     <a href="/data-ujian">
-                                        <button type="submit" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-circle-xmark text-white-custom"></i>Batal</button>
+                                        <button type="submit" class="btn bg-red-custom text-white-custom" id="batal"><i class="fa-regular fa-circle-xmark text-white-custom"></i>Batal</button>
                                     </a>
                                 </div>
                             </form>
@@ -102,5 +102,29 @@
             theme: 'snow'
         });
     </script>
+
+    {{-- sweetalert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const simpan = document.getElementById('simpan');
+        const batal = document.getElementById('batal');
+        simpan.addEventListener('click', () => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Data berhasil disimpan',
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true
+            }).then(() => {
+                window.location.href = '/data-ujian';
+            });
+        });
+
+        batal.addEventListener('click', () => {
+            window.location.href = '/data-ujian';
+        });
+    </script>
+    {{-- sweetalert --}}
 </body>
 </html>

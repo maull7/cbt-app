@@ -76,8 +76,8 @@
                                         <td>Blue</td>
                                         <td>Blue</td>
                                         <td>
-                                            <button type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button id="edit" type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button id="hapus" type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     <!-- row 2 -->
@@ -91,8 +91,8 @@
                                         <td>Purple</td>
                                         <td>Purple</td>
                                         <td>
-                                            <button type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button id="edit" type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button id="hapus" type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     <!-- row 3 -->
@@ -106,8 +106,8 @@
                                         <td>Red</td>
                                         <td>Red</td>
                                         <td>
-                                            <button type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button id="edit" type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button id="hapus" type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -133,5 +133,32 @@
         </div>
         {{-- content --}}
     </div>
+
+    {{-- sweetalert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const hapus = document.getElementById('hapus');
+        const edit = document.getElementById('edit');
+        hapus.addEventListener('click', () => {
+            Swal.fire({
+                    title: 'Apakah kamu yakin?',
+                    text: "Data akan dihapus!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#1463ff',
+                    cancelButtonColor: '#ff3b30',
+                    confirmButtonText: 'Ya, Hapus!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                })
+        });
+
+        edit.addEventListener('click', () => {
+            window.location.href = '/edit-data-ujian';
+        });
+    </script>
+    {{-- sweetalert --}}
 </body>
 </html>
