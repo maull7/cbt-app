@@ -37,7 +37,7 @@
                             <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Data Ujian</h3>
                             <div class="mb-5">
                                 <a href="/tambah-ujian">
-                                    <button type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-solid fa-plus"></i>Tambah Ujian</button>
+                                    <button type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-solid fa-plus"></i>Tambah</button>
                                 </a>
                             </div>
                             <div class="flex justify-between items-center gap-3 md:gap-0 flex-wrap">

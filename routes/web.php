@@ -22,8 +22,20 @@ Route::get('/data-soal', function () {
     return view('data-soal');
 });
 
+Route::get('/tambah-soal', function () {
+    return view('tambah-soal');
+});
+
+Route::get('/import-soal', function () {
+    return view('import-soal');
+});
+
 Route::get('/data-sesi', function () {
     return view('data-sesi');
+});
+
+Route::get('/tambah-sesi', function () {
+    return view('tambah-sesi');
 });
 
 Route::get('/data-peserta', function () {
