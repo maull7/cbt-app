@@ -77,8 +77,8 @@
                                         <td>Blue</td>
                                         <td>Blue</td>
                                         <td>
-                                            <button id="edit" type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button id="hapus" type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     <!-- row 2 -->
@@ -90,8 +90,8 @@
                                         <td>Purple</td>
                                         <td>Purple</td>
                                         <td>
-                                            <button id="edit" type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button id="hapus" type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     <!-- row 3 -->
@@ -103,8 +103,8 @@
                                         <td>Red</td>
                                         <td>Red</td>
                                         <td>
-                                            <button id="edit" type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button id="hapus" type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -134,10 +134,9 @@
     {{-- sweetalert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        const hapus = document.getElementById('hapus');
-        const edit = document.getElementById('edit');
-        hapus.addEventListener('click', () => {
-            Swal.fire({
+        document.querySelectorAll('.btn-hapus').forEach(button => {
+            button.addEventListener('click', () => {
+                Swal.fire({
                     title: 'Apakah kamu yakin?',
                     text: "Data akan dihapus!",
                     icon: 'warning',
@@ -147,13 +146,18 @@
                     confirmButtonText: 'Ya, Hapus!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        form.submit();
+                        // Ganti dengan aksi penghapusan sesuai kebutuhan
+                        console.log('Data dihapus!');
                     }
-                })
+                });
+            });
         });
 
-        edit.addEventListener('click', () => {
-            window.location.href = '/edit-data-sesi';
+        document.querySelectorAll('.btn-edit').forEach(button => {
+            button.addEventListener('click', () => {
+                // Ganti dengan redirect dinamis jika perlu
+                window.location.href = '/edit-data-sesi';
+            });
         });
     </script>
     {{-- sweetalert --}}

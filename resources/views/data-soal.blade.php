@@ -84,8 +84,8 @@
                                             </ul>
                                         </td>
                                         <td>
-                                            <button id="edit" type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button id="hapus" type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     <!-- row 2 -->
@@ -102,8 +102,8 @@
                                             </ul>
                                         </td>
                                         <td>
-                                            <button id="edit" type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button id="hapus" type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     <!-- row 3 -->
@@ -120,8 +120,8 @@
                                             </ul>
                                         </td>
                                         <td>
-                                            <button id="edit" type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button id="hapus" type="button" class="btn bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -147,5 +147,36 @@
         </div>
         {{-- content --}}
     </div>
+
+    {{-- sweetalert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.querySelectorAll('.btn-hapus').forEach(button => {
+            button.addEventListener('click', () => {
+                Swal.fire({
+                    title: 'Apakah kamu yakin?',
+                    text: "Data akan dihapus!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#1463ff',
+                    cancelButtonColor: '#ff3b30',
+                    confirmButtonText: 'Ya, Hapus!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Ganti dengan aksi penghapusan sesuai kebutuhan
+                        console.log('Data dihapus!');
+                    }
+                });
+            });
+        });
+
+        document.querySelectorAll('.btn-edit').forEach(button => {
+            button.addEventListener('click', () => {
+                // Ganti dengan redirect dinamis jika perlu
+                window.location.href = '/edit-data-soal';
+            });
+        });
+    </script>
+    {{-- sweetalert --}}
 </body>
 </html>
