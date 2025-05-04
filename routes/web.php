@@ -42,8 +42,24 @@ Route::get('/data-peserta', function () {
     return view('data-peserta');
 });
 
+Route::get('/tambah-peserta', function () {
+    return view('tambah-peserta');
+});
+
+Route::get('/import-peserta', function () {
+    return view('import-peserta');
+});
+
+Route::get('/cetak-kartu', function () {
+    return view('cetak-kartu');
+});
+
 Route::get('/peserta-per-sesi', function () {
     return view('peserta-per-sesi');
+});
+
+Route::get('/tambah-peserta-per-sesi', function () {
+    return view('tambah-peserta-per-sesi');
 });
 
 Route::get('/hasil-ujian', function () {

@@ -42,21 +42,21 @@
                             <form action="/import-soal" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-4">
-                                    <label for="nama-ujian" class="block mb-3 text-sm font-medium text-black-custom">Nama Ujian</label>
-                                    <select class="select border border-gray-custom w-full md:w-xs" required>
-                                        <option disabled selected>Pilih Soal Ujian</option>
-                                        <option>Bahasa Indonesia Kelas X</option>
-                                        <option>Bahasa Indonesia Kelas XI</option>
-                                        <option>Bahasa Indonesia Kelas XII</option>
-                                    </select>
-                                </div>
-                                <div class="mb-4">
                                     <div class="p-4 bg-light-blue-custom rounded-sm">
                                         <h4 class="text-sm font-medium text-black-custom mb-4">
                                             Gunakan format Excel yang disediakan untuk import data dari Excel. Jika soal mengandung Gambar, maka import teksnya saja. Gambar akan diupload secara manual.
                                         </h4>
                                         <a href="/assets/format-import-soal.xlsx" class="btn bg-green-custom text-white-custom"><i class="fa-solid fa-file-excel"></i>Download Format</a>
                                     </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="nama-ujian" class="block mb-3 text-sm font-medium text-black-custom">Ujian</label>
+                                    <select class="select border border-gray-custom w-full md:w-xs" required>
+                                        <option disabled selected>Pilih Ujian</option>
+                                        <option>Bahasa Indonesia Kelas X</option>
+                                        <option>Bahasa Indonesia Kelas XI</option>
+                                        <option>Bahasa Indonesia Kelas XII</option>
+                                    </select>
                                 </div>
                                 <div class="mb-4">
                                     <label for="file" class="block mb-3 text-sm font-medium text-black-custom">File Import</label>

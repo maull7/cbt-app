@@ -34,20 +34,26 @@
                 <div class="grid grid-cols-1">
                     <div class="card w-auto bg-white-custom shadow-sm">
                         <div class="card-body">
-                            <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Data Soal Ujian</h3>
-                            <div class="mb-5 flex justify-between w-full gap-3 md:gap-0 flex-col-reverse md:flex-row">
-                                <select class="select border border-gray-custom w-full md:w-xs" required>
+                            <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Tambah Kelompok Ujian</h3>
+                            <div class="mb-6 flex justify-between w-full gap-3 lg:gap-0 flex-wrap">
+                                <select class="select border border-gray-custom w-full md:w-xs">
                                     <option disabled selected>Pilih Ujian</option>
                                     <option>Bahasa Indonesia Kelas X</option>
                                     <option>Bahasa Indonesia Kelas XI</option>
                                     <option>Bahasa Indonesia Kelas XII</option>
                                 </select>
+                                <select class="select border border-gray-custom w-full md:w-xs">
+                                    <option disabled selected>Pilih Sesi</option>
+                                    <option>Sesi 1</option>
+                                    <option>Sesi 2</option>
+                                    <option>Sesi 3</option>
+                                </select>
                                 <div>
-                                    <a href="/tambah-soal">
-                                        <button type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-solid fa-plus"></i>Tambah</button>
+                                    <a href="/peserta-per-sesi">
+                                        <button type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-solid fa-save"></i>Simpan</button>
                                     </a>
-                                    <a href="/import-soal">
-                                        <button type="button" class="btn bg-green-custom text-white-custom"><i class="fa-solid fa-file-import"></i>Import</button>
+                                    <a href="/peserta-per-sesi">
+                                        <button type="button" class="btn bg-red-custom text-white-custom" id="batal"><i class="fa-regular fa-circle-xmark text-white-custom"></i>Batal</button>
                                     </a>
                                 </div>
                             </div>
@@ -59,72 +65,81 @@
                                 <input type="text" class="border border-gray-custom text-black-custom text-sm rounded-sm block py-2 px-3 w-full md:max-w-sm focus:outline-gray-custom" placeholder="Search..." required>
                             </div>
                             {{-- table --}}
-                            <div class="overflow-x-auto mt-4">
-                                <table class="table table-zebra">
+                            <div class="overflow-x-auto">
+                                <table class="table">
                                     <!-- head -->
                                     <thead>
                                     <tr>
+                                        <th>
+                                        <label>
+                                            <input type="checkbox" class="checkbox" id="selectAll" />
+                                        </label>
+                                        </th>
                                         <th>No</th>
-                                        <th>Soal</th>
-                                        <th>Action</th>
+                                        <th>No Ujian</th>
+                                        <th>Nama Peserta</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Nama Sekolah</th>
+                                        <th>Kelas</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <!-- row 1 -->
                                     <tr>
-                                        <th>1</th>
-                                        <td>
-                                            <p class="text-black-custom text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, ex!</p>
-                                            <ul>
-                                                <li class="text-black-custom text-sm">Jawaban A</li>
-                                                <li class="text-blue-custom text-sm">Jawaban B (Dipilih)</li>
-                                                <li class="text-black-custom text-sm">Jawaban C</li>
-                                                <li class="text-black-custom text-sm">Jawaban D</li>
-                                                <li class="text-black-custom text-sm">Jawaban E</li>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
-                                        </td>
+                                        <th>
+                                        <label>
+                                            <input type="checkbox" class="checkbox row-checkbox" />
+                                        </label>
+                                        </th>
+                                        <td>1</td>
+                                        <td>12313123</td>
+                                        <td>Budi</td>
+                                        <td>L</td>
+                                        <td>SMK Negeri 1</td>
+                                        <td>X RPL 1</td>
                                     </tr>
                                     <!-- row 2 -->
                                     <tr>
-                                        <th>2</th>
-                                        <td>
-                                            <p class="text-black-custom text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, tempore et? Et perferendis voluptates explicabo.</p>
-                                            <ul>
-                                                <li class="text-black-custom text-sm">Jawaban A</li>
-                                                <li class="text-black-custom text-sm">Jawaban B</li>
-                                                <li class="text-black-custom text-sm">Jawaban C</li>
-                                                <li class="text-blue-custom text-sm">Jawaban D (Dipilih)</li>
-                                                <li class="text-black-custom text-sm">Jawaban E</li>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
-                                        </td>
+                                        <th>
+                                        <label>
+                                            <input type="checkbox" class="checkbox row-checkbox" />
+                                        </label>
+                                        </th>
+                                        <td>2</td>
+                                        <td>12313123</td>
+                                        <td>Budi</td>
+                                        <td>L</td>
+                                        <td>SMK Negeri 1</td>
+                                        <td>X RPL 1</td>
                                     </tr>
                                     <!-- row 3 -->
                                     <tr>
-                                        <th>3</th>
-                                        <td>
-                                            <p class="text-black-custom text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum reiciendis numquam rem dolores omnis eveniet magnam aspernatur harum quis minus.</p>
-                                            <ul>
-                                                <li class="text-black-custom text-sm">Jawaban A</li>
-                                                <li class="text-black-custom text-sm">Jawaban B</li>
-                                                <li class="text-blue-custom text-sm">Jawaban C (Dipilih)</li>
-                                                <li class="text-black-custom text-sm">Jawaban D</li>
-                                                <li class="text-black-custom text-sm">Jawaban E</li>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
-                                        </td>
+                                        <th>
+                                        <label>
+                                            <input type="checkbox" class="checkbox row-checkbox" />
+                                        </label>
+                                        </th>
+                                        <td>3</td>
+                                        <td>12313123</td>
+                                        <td>Budi</td>
+                                        <td>L</td>
+                                        <td>SMK Negeri 1</td>
+                                        <td>X RPL 1</td>
                                     </tr>
-                                    </tbody>
+                                    <!-- row 4 -->
+                                    <tr>
+                                        <th>
+                                        <label>
+                                            <input type="checkbox" class="checkbox row-checkbox" />
+                                        </label>
+                                        </th>
+                                        <td>4</td>
+                                        <td>12313123</td>
+                                        <td>Budi</td>
+                                        <td>L</td>
+                                        <td>SMK Negeri 1</td>
+                                        <td>X RPL 1</td>
+                                    </tr>
                                 </table>
                             </div>
                             {{-- table --}}
@@ -147,6 +162,19 @@
         </div>
         {{-- content --}}
     </div>
+
+    {{-- checkbox all --}}
+    <script>
+        const selectAllCheckbox = document.getElementById("selectAll");
+        const rowCheckboxes = document.querySelectorAll(".row-checkbox");
+
+        selectAllCheckbox.addEventListener("change", function () {
+            rowCheckboxes.forEach(checkbox => {
+            checkbox.checked = this.checked;
+            });
+        });
+    </script>
+    {{-- checkbox all --}}
 
     {{-- sweetalert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -173,7 +201,7 @@
         document.querySelectorAll('.btn-edit').forEach(button => {
             button.addEventListener('click', () => {
                 // Ganti dengan redirect dinamis jika perlu
-                window.location.href = '/edit-data-soal';
+                window.location.href = '/edit-data-sesi';
             });
         });
     </script>

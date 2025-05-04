@@ -41,9 +41,9 @@
                             <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Tambah Soal Ujian</h3>
                             <form action="">
                                 <div class="mb-4">
-                                    <label for="nama-ujian" class="block mb-3 text-sm font-medium text-black-custom">Nama Ujian</label>
+                                    <label for="nama-ujian" class="block mb-3 text-sm font-medium text-black-custom">Ujian</label>
                                     <select class="select border border-gray-custom w-full md:w-xs" required>
-                                        <option disabled selected>Pilih Soal Ujian</option>
+                                        <option disabled selected>Pilih Ujian</option>
                                         <option>Bahasa Indonesia Kelas X</option>
                                         <option>Bahasa Indonesia Kelas XI</option>
                                         <option>Bahasa Indonesia Kelas XII</option>

@@ -37,7 +37,7 @@
                             <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Data Sesi Ujian</h3>
                             <div class="mb-5 flex justify-between w-full gap-3 md:gap-0 flex-col-reverse md:flex-row">
                                 <select class="select border border-gray-custom w-full md:w-xs">
-                                    <option disabled selected>Pilih Nama Ujian</option>
+                                    <option disabled selected>Pilih Ujian</option>
                                     <option>Bahasa Indonesia Kelas X</option>
                                     <option>Bahasa Indonesia Kelas XI</option>
                                     <option>Bahasa Indonesia Kelas XII</option>

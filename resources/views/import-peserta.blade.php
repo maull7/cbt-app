@@ -38,31 +38,23 @@
                 <div class="grid grid-cols-1">
                     <div class="card w-auto bg-white-custom shadow-sm">
                         <div class="card-body">
-                            <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Tambah Sesi Ujian</h3>
-                            <form action="">
+                            <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Import Peserta Ujian</h3>
+                            <form action="/import-soal" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="mb-4">
-                                    <label for="nama-ujian" class="block mb-3 text-sm font-medium text-black-custom">Ujian</label>
-                                    <select class="select border border-gray-custom w-full md:w-xs" required>
-                                        <option disabled selected>Pilih Ujian</option>
-                                        <option>Bahasa Indonesia Kelas X</option>
-                                        <option>Bahasa Indonesia Kelas XI</option>
-                                        <option>Bahasa Indonesia Kelas XII</option>
-                                    </select>
+                                    <div class="p-4 bg-light-blue-custom rounded-sm">
+                                        <h4 class="text-sm font-medium text-black-custom mb-4">
+                                            Gunakan format Excel yang telah disediakan untuk import data dari Excel.
+                                        </h4>
+                                        <a href="/assets/format-import-soal.xlsx" class="btn bg-green-custom text-white-custom"><i class="fa-solid fa-file-excel"></i>Download Format</a>
+                                    </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="nama-sesi" class="block mb-3 text-sm font-medium text-black-custom">Nama Sesi</label>
-                                    <input type="text" class="border border-gray-custom text-sm rounded-lg block py-3 px-2 text-black-custom w-full md:w-xs focus:outline-gray-custom font-medium" name="nama-sesi" id="nama-sesi" placeholder="Nama Sesi" required>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="mulai" class="block mb-3 text-sm font-medium text-black-custom">Mulai</label>
-                                    <input type="datetime-local" class="input w-full md:w-xs" required />
-                                </div>
-                                <div class="mb-4">
-                                    <label for="durasi" class="block mb-3 text-sm font-medium text-black-custom">Selesai</label>
-                                    <input type="datetime-local" class="input w-full md:w-xs" required />
+                                    <label for="file" class="block mb-3 text-sm font-medium text-black-custom">File Import</label>
+                                    <input type="file" class="file-input w-full max-w-xs" name="file" id="file" />
                                 </div>
                                 <div class="pt-4 flex gap-1 flex-wrap">
-                                    <button type="submit" class="btn bg-blue-custom text-white-custom" id="simpan"><i class="fa-regular fa-floppy-disk text-white-custom"></i>Simpan</button>
+                                    <button type="submit" class="btn bg-blue-custom text-white-custom" id="simpan"><i class="fa-solid fa-file-import"></i>Import</button>
                                     <button type="button" class="btn bg-red-custom text-white-custom" id="batal"><i class="fa-regular fa-circle-xmark text-white-custom"></i>Batal</button>
                                 </div>
                             </form>
@@ -88,12 +80,12 @@
                 timer: 1500,
                 timerProgressBar: true
             }).then(() => {
-                window.location.href = '/data-sesi';
+                window.location.href = '/data-peserta';
             });
         });
 
         batal.addEventListener('click', () => {
-            window.location.href = '/data-sesi';
+            window.location.href = '/data-peserta';
         });
     </script>
     {{-- sweetalert --}}
