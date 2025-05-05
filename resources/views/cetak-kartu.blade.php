@@ -16,7 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
-<body">
+<body>
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         {{-- sidebar --}}

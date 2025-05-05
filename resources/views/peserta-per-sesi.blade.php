@@ -12,7 +12,7 @@
         <link rel="icon" type="image/svg+xml" href="/assets/logo-sekolah.png">
     @vite('resources/css/app.css')
 </head>
-<body">
+<body>
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         {{-- sidebar --}}
@@ -74,7 +74,6 @@
                                         <td>Budi</td>
                                         <td>Sesi 1</td>
                                         <td>
-                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
                                             <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
@@ -85,7 +84,6 @@
                                         <td>Budi</td>
                                         <td>Sesi 1</td>
                                         <td>
-                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
                                             <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
@@ -96,7 +94,6 @@
                                         <td>Budi</td>
                                         <td>Sesi 1</td>
                                         <td>
-                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
                                             <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
@@ -143,13 +140,6 @@
                         console.log('Data dihapus!');
                     }
                 });
-            });
-        });
-
-        document.querySelectorAll('.btn-edit').forEach(button => {
-            button.addEventListener('click', () => {
-                // Ganti dengan redirect dinamis jika perlu
-                window.location.href = '/edit-data-sesi';
             });
         });
     </script>

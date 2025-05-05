@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li><a href="/profile" class="font-semibold text-black-custom hover:bg-light-blue-custom"><i class="fa-regular fa-user"></i>Profile</a></li>
-                <li><a class="font-semibold text-black-custom hover:bg-light-blue-custom"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></li>
+                <li><a href="/login-admin" class="font-semibold text-black-custom hover:bg-light-blue-custom"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></li>
             </ul>
         </div>
     </div>

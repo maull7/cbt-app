@@ -12,7 +12,7 @@
         <link rel="icon" type="image/svg+xml" href="/assets/logo-sekolah.png">
     @vite('resources/css/app.css')
 </head>
-<body">
+<body>
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         {{-- sidebar --}}

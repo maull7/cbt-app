@@ -34,20 +34,10 @@
                 <div class="grid grid-cols-1">
                     <div class="card w-auto bg-white-custom shadow-sm">
                         <div class="card-body">
-                            <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Data Soal Ujian</h3>
                             <div class="mb-5 flex justify-between w-full gap-3 md:gap-0 flex-col-reverse md:flex-row">
-                                <select class="select border border-gray-custom w-full md:w-xs" required>
-                                    <option disabled selected>Pilih Ujian</option>
-                                    <option>Bahasa Indonesia Kelas X</option>
-                                    <option>Bahasa Indonesia Kelas XI</option>
-                                    <option>Bahasa Indonesia Kelas XII</option>
-                                </select>
                                 <div>
-                                    <a href="/tambah-soal">
-                                        <button type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-solid fa-plus"></i>Tambah</button>
-                                    </a>
-                                    <a href="/import-soal">
-                                        <button type="button" class="btn bg-green-custom text-white-custom"><i class="fa-solid fa-file-import"></i>Import</button>
+                                    <a href="/hasil-ujian">
+                                        <button type="button" class="btn bg-blue-custom text-white-custom"><i class="fa-solid fa-arrow-left"></i>Kembali</button>
                                     </a>
                                 </div>
                             </div>
@@ -66,7 +56,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Soal</th>
-                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -77,15 +66,11 @@
                                             <p class="text-black-custom text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, ex!</p>
                                             <ul>
                                                 <li class="text-black-custom text-sm">Jawaban A</li>
-                                                <li class="text-blue-custom text-sm">Jawaban B (Dipilih)</li>
+                                                <li class="text-green-custom text-sm">Jawaban B (Benar)</li>
                                                 <li class="text-black-custom text-sm">Jawaban C</li>
                                                 <li class="text-black-custom text-sm">Jawaban D</li>
                                                 <li class="text-black-custom text-sm">Jawaban E</li>
                                             </ul>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     <!-- row 2 -->
@@ -95,15 +80,11 @@
                                             <p class="text-black-custom text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, tempore et? Et perferendis voluptates explicabo.</p>
                                             <ul>
                                                 <li class="text-black-custom text-sm">Jawaban A</li>
-                                                <li class="text-black-custom text-sm">Jawaban B</li>
+                                                <li class="text-green-custom text-sm">Jawaban B (Benar)</li>
                                                 <li class="text-black-custom text-sm">Jawaban C</li>
-                                                <li class="text-blue-custom text-sm">Jawaban D (Dipilih)</li>
+                                                <li class="text-red-custom text-sm">Jawaban D (Salah)</li>
                                                 <li class="text-black-custom text-sm">Jawaban E</li>
                                             </ul>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     <!-- row 3 -->
@@ -114,14 +95,10 @@
                                             <ul>
                                                 <li class="text-black-custom text-sm">Jawaban A</li>
                                                 <li class="text-black-custom text-sm">Jawaban B</li>
-                                                <li class="text-blue-custom text-sm">Jawaban C (Dipilih)</li>
+                                                <li class="text-green-custom text-sm">Jawaban C (Benar)</li>
                                                 <li class="text-black-custom text-sm">Jawaban D</li>
                                                 <li class="text-black-custom text-sm">Jawaban E</li>
                                             </ul>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-edit bg-blue-custom text-white-custom"><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn btn-hapus bg-red-custom text-white-custom"><i class="fa-regular fa-trash-can"></i></button>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -173,7 +150,7 @@
         document.querySelectorAll('.btn-edit').forEach(button => {
             button.addEventListener('click', () => {
                 // Ganti dengan redirect dinamis jika perlu
-                window.location.href = '/edit-soal';
+                window.location.href = '/edit-data-soal';
             });
         });
     </script>

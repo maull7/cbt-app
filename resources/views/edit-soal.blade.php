@@ -38,7 +38,7 @@
                 <div class="grid grid-cols-1">
                     <div class="card w-auto bg-white-custom shadow-sm">
                         <div class="card-body">
-                            <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Tambah Soal Ujian</h3>
+                            <h3 class="lg:text-xl font-medium text-black-custom text-base mb-4">Edit Soal Ujian</h3>
                             <form action="">
                                 <div class="mb-4">
                                     <label for="nama-ujian" class="block mb-3 text-sm font-medium text-black-custom">Ujian</label>

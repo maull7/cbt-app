@@ -7,12 +7,12 @@
     </div>
     <div class="flex flex-col">
         <!-- Sidebar content here -->
-        <li class=" active rounded-sm"><a href="/" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-chart-line"></i>Dhasboard</a></li>
-        <li><a href="/data-ujian" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-book"></i>Ujian</a></li>
-        <li><a href="/data-soal" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-regular fa-file-lines"></i>Soal Ujian</a></li>
-        <li><a href="/data-sesi" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-regular fa-clock"></i>Sesi Ujian</a></li>
-        <li><a href="/data-peserta" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-regular fa-user"></i>Peserta Ujian</a></li>
-        <li><a href="/peserta-per-sesi" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-users"></i>Peserta Per-Sesi</a></li>
-        <li><a href="/hasil-ujian" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-list-check"></i>Hasil Ujian</a></li>
+        <li class="rounded-sm sidebar-link"><a href="/" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-chart-line"></i>Dhasboard</a></li>
+        <li class="rounded-sm sidebar-link"><a href="/data-ujian" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-book"></i>Ujian</a></li>
+        <li class="rounded-sm sidebar-link"><a href="/data-soal" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-regular fa-file-lines"></i>Soal Ujian</a></li>
+        <li class="rounded-sm sidebar-link"><a href="/data-sesi" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-regular fa-clock"></i>Sesi Ujian</a></li>
+        <li class="rounded-sm sidebar-link"><a href="/data-peserta" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-regular fa-user"></i>Peserta Ujian</a></li>
+        <li class="rounded-sm sidebar-link"><a href="/peserta-per-sesi" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-users"></i>Peserta Per-Sesi</a></li>
+        <li class="rounded-sm sidebar-link"><a href="/hasil-ujian" class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i class="fa-solid fa-list-check"></i>Hasil Ujian</a></li>
     </div>
 </ul>

@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+// admin
+Route::get('/login-admin', function () {
+    return view('login-admin');
+});
+
 Route::get('/', function () {
     return view('index');
 });
@@ -18,12 +23,20 @@ Route::get('/tambah-ujian', function () {
     return view('tambah-ujian');
 });
 
+Route::get('/edit-ujian', function () {
+    return view('edit-ujian');
+});
+
 Route::get('/data-soal', function () {
     return view('data-soal');
 });
 
 Route::get('/tambah-soal', function () {
     return view('tambah-soal');
+});
+
+Route::get('/edit-soal', function () {
+    return view('edit-soal');
 });
 
 Route::get('/import-soal', function () {
@@ -38,12 +51,20 @@ Route::get('/tambah-sesi', function () {
     return view('tambah-sesi');
 });
 
+Route::get('/edit-sesi', function () {
+    return view('edit-sesi');
+});
+
 Route::get('/data-peserta', function () {
     return view('data-peserta');
 });
 
 Route::get('/tambah-peserta', function () {
     return view('tambah-peserta');
+});
+
+Route::get('/edit-peserta', function () {
+    return view('edit-peserta');
 });
 
 Route::get('/import-peserta', function () {
@@ -64,4 +85,17 @@ Route::get('/tambah-peserta-per-sesi', function () {
 
 Route::get('/hasil-ujian', function () {
     return view('hasil-ujian');
+});
+
+Route::get('/view-hasil-ujian', function () {
+    return view('view-hasil-ujian');
+});
+
+// peserta
+Route::get('/login-peserta', function () {
+    return view('users.login-peserta');
+});
+
+Route::get('/peserta', function () {
+    return view('users.index-peserta');
 });
