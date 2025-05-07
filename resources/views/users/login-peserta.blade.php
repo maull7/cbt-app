@@ -36,7 +36,7 @@
                     </label>
                 </div>
                 <div class="mt-6">
-                    <a href="/peserta">
+                    <a href="/daftar-ujian-peserta">
                         <button class="btn w-full bg-blue-custom text-white-custom">LOGIN</button>
                     </a>
                 </div>

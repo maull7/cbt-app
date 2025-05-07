@@ -96,6 +96,22 @@ Route::get('/login-peserta', function () {
     return view('users.login-peserta');
 });
 
-Route::get('/peserta', function () {
+Route::get('/daftar-ujian-peserta', function () {
     return view('users.index-peserta');
+});
+
+Route::get('/detail-ujian', function () {
+    return view('users.detail-ujian');
+});
+
+Route::get('/ujian', function () {
+    return view('users.ujian');
+});
+
+Route::get('/detail-ujian-selesai', function () {
+    return view('users.detail-ujian-selesai');
+});
+
+Route::get('/daftar-ujian', function () {
+    return view('users.daftar-ujian');
 });

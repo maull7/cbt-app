@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CBT | Admin</title>
+    <title>CBT | Daftar Ujian</title>
     <!-- fontawesome -->
         <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
 
@@ -16,8 +16,7 @@
     {{-- navbar --}}
     @include('users.navbar.navbar')
     {{-- navbar --}}
-    <div class="px-4 w-full min-h-screen">
-        <p class="text-center my-3 text-sm font-medium text-black-custom">20012012 - Budi Susanto</p>
+    <div class="px-4 w-full min-h-screen my-4">
         {{-- Bagian Card --}}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             {{-- card --}}
@@ -27,7 +26,7 @@
                     <table class="text-sm text-black-custom mt-3">
                         <tbody>
                             <tr>
-                                <td>Mapel</td>
+                                <td>Mata Pelajaran</td>
                                 <td>:</td>
                                 <td>Bahasa Indonesia</td>
                             </tr>
@@ -49,7 +48,7 @@
                         </tbody>
                     </table>
                     <div class="mt-6">
-                        <a href="/peserta">
+                        <a href="/detail-ujian">
                             <button class="btn w-full bg-blue-custom text-white-custom">Kerjakan</button>
                         </a>
                     </div>
@@ -84,7 +83,7 @@
                         </tbody>
                     </table>
                     <div class="mt-6">
-                        <a href="/peserta">
+                        <a href="/detail-ujian">
                             <button class="btn w-full bg-blue-custom text-white-custom">Kerjakan</button>
                         </a>
                     </div>
@@ -119,7 +118,7 @@
                         </tbody>
                     </table>
                     <div class="mt-6">
-                        <a href="/peserta">
+                        <a href="/detail-ujian">
                             <button class="btn w-full bg-blue-custom text-white-custom">Kerjakan</button>
                         </a>
                     </div>
