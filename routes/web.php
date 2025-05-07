@@ -1,14 +1,24 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MasterJurusanController;
+use App\Http\Controllers\MasterKelasController;
+use App\Http\Controllers\MasterSiswaController;
 use Illuminate\Support\Facades\Route;
 
 // admin
-Route::get('/login-admin', function () {
-    return view('login-admin');
-});
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'actionLogin'])->name('login.action');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::get('/', function () {
-    return view('index');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('index');
+    });
+
+    Route::resource('master_jurusan', MasterJurusanController::class);
+    Route::resource('master_kelas', MasterKelasController::class);
+    Route::resource('master_siswa', MasterSiswaController::class);
 });
 
 Route::get('/profile', function () {
@@ -94,7 +104,7 @@ Route::get('/view-hasil-ujian', function () {
 // peserta
 Route::get('/login-peserta', function () {
     return view('users.login-peserta');
-});
+})->middleware('guest');
 
 Route::get('/daftar-ujian-peserta', function () {
     return view('users.index-peserta');
