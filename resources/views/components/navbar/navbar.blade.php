@@ -11,7 +11,7 @@
                 <h4 class="font-semibold text-black-custom text-sm md:text-md">{{ Auth::user()->name }}</h4>
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-10 rounded-full">
-                        <img alt="logo-admin" src="{{ asset('assets/logo-sekolah.png') }}" />
+                        <img alt="logo-admin" src="{{ asset('storage/profile/admin/' . Auth::user()->image) }}" />
                     </div>
                 </div>
             </div>

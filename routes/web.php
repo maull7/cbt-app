@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MasterJurusanController;
 use App\Http\Controllers\MasterKelasController;
@@ -12,18 +13,16 @@ Route::post('/login', [LoginController::class, 'actionLogin'])->name('login.acti
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('index');
-    });
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+    Route::put('/updateProfile/{id}', [DashboardController::class, 'updateProfile'])->name('update.profile');
 
     Route::resource('master_jurusan', MasterJurusanController::class);
     Route::resource('master_kelas', MasterKelasController::class);
     Route::resource('master_siswa', MasterSiswaController::class);
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+
 
 Route::get('/data-ujian', function () {
     return view('data-ujian');

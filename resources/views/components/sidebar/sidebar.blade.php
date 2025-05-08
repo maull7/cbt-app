@@ -1,7 +1,7 @@
 <ul class="menu bg-white-custom min-h-screen w-56 p-4">
     <div class="flex items-center gap-2 flex-col mb-4">
         <a>
-            <img src="{{ asset('storage/profile/admin/' . Auth::user()->image) }}" alt="Foto Profil"
+            <img src="{{ asset('assets/logo-sekolah.png') }}" alt="Foto Profil"
                 class="w-16 h-16 object-cover rounded-full">
 
         </a>
