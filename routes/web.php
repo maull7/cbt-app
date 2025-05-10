@@ -2,9 +2,13 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MasterGuruController;
 use App\Http\Controllers\MasterJurusanController;
 use App\Http\Controllers\MasterKelasController;
+use App\Http\Controllers\MasterMapelController;
 use App\Http\Controllers\MasterSiswaController;
+use App\Http\Controllers\MasterSoalController;
+use App\Http\Controllers\MasterUjianController;
 use Illuminate\Support\Facades\Route;
 
 // admin
@@ -20,6 +24,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('master_jurusan', MasterJurusanController::class);
     Route::resource('master_kelas', MasterKelasController::class);
     Route::resource('master_siswa', MasterSiswaController::class);
+    Route::resource('master_guru', MasterGuruController::class);
+    Route::resource('master_mapel', MasterMapelController::class);
+    Route::resource('master_ujian', MasterUjianController::class);
+    Route::resource('master_soal', MasterSoalController::class);
 });
 
 

@@ -70,13 +70,7 @@
                                         <option>Tidak</option>
                                     </select>
                                 </div>
-                                <div class="mb-4">
-                                    <label for="hasil-ujian" class="block mb-3 text-sm font-medium text-black-custom">Tampilkan Hasil Ujian</label>
-                                    <select class="select border border-gray-custom w-full md:w-xs">
-                                        <option>Tidak</option>
-                                        <option>Ya</option>
-                                    </select>
-                                </div>
+                                
                                 <div class="mb-4">
                                     <label for="deskripsi" class="block mb-3 text-sm font-medium text-black-custom">Deskripsi</label>
                                     <div id="editor"></div>
