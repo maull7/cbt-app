@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->integer('id_ujian');
             $table->integer('id_kategori_soal');
-            $table->string('soal');
+            $table->string('soal')->nullable();
             $table->integer('id_kategori_jawaban');
-            $table->string('pilihan_1');
-            $table->string('pilihan_2');
-            $table->string('pilihan_3');
-            $table->string('pilihan_4');
+            $table->string('pilihan_1')->nullable();
+            $table->string('pilihan_2')->nullable();
+            $table->string('pilihan_3')->nullable();
+            $table->string('pilihan_4')->nullable();
             $table->integer('poin');
             $table->timestamps();
         });

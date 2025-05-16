@@ -28,6 +28,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('master_mapel', MasterMapelController::class);
     Route::resource('master_ujian', MasterUjianController::class);
     Route::resource('master_soal', MasterSoalController::class);
+    Route::get('master_soal/{id}/addSoal', [MasterSoalController::class, 'createAll'])->name('createAll');
+    Route::post('master_soal/add_soal', [MasterSoalController::class, 'storeAllExamp'])->name('master_soal.store-all');
 });
 
 

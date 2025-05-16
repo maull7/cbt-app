@@ -15,6 +15,7 @@ class Soal extends Model
         'pilihan_2',
         'pilihan_3',
         'pilihan_4',
+        'jawaban_benar',
         'poin'
     ];
 }

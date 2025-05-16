@@ -89,6 +89,10 @@
 
 
                                                 <td class="px-4 py-2 flex gap-2">
+                                                    <a href="{{ route('createAll', base64_encode($data->id)) }}"
+                                                        class="btn btn-edit bg-green-custom text-white-custom"><i
+                                                            class="fa-solid fa-square-plus"></i>
+                                                    </a>
                                                     <a href="{{ route('master_ujian.edit', base64_encode($data->id)) }}"
                                                         class="btn btn-edit bg-blue-custom text-white-custom"><i
                                                             class="fa-regular fa-pen-to-square"></i></a>
