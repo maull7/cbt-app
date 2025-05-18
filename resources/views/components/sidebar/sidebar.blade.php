@@ -50,7 +50,7 @@
         <li class="rounded-sm sidebar-link"><a href="{{ route('master_ujian.index') }}"
                 class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i
                     class="fa-solid fa-book"></i>Ujian</a></li>
-        <li class="rounded-sm sidebar-link"><a href="/data-soal"
+        <li class="rounded-sm sidebar-link"><a href="{{ route('master_soal.index') }}"
                 class="hover:bg-light-blue-custom font-semibold text-black-custom py-4 text-sm md:text-md"><i
                     class="fa-regular fa-file-lines"></i>Soal Ujian</a></li>
         <li class="rounded-sm sidebar-link"><a href="/data-sesi"

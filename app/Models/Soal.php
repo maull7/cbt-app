@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Soal extends Model
 {
@@ -18,4 +19,8 @@ class Soal extends Model
         'jawaban_benar',
         'poin'
     ];
+    public function ujian(): BelongsTo
+    {
+        return $this->belongsTo(Ujian::class);
+    }
 }

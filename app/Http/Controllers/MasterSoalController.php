@@ -15,17 +15,30 @@ class MasterSoalController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $ujian = Ujian::all();
+
+        $soalQuery = Soal::with('ujian');
+
+        if ($request->has('ujian_id') && $request->ujian_id != '') {
+            $soalQuery->where('id_ujian', $request->ujian_id);
+        }
+
+        $soal = $soalQuery->get();
+
+        return view('soal.index', compact('soal', 'ujian'));
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $ujian = Ujian::all();
+        $kategori = Kategori::all();
+        return view('soal.create', compact('kategori', 'ujian'));
     }
 
     /**
@@ -33,7 +46,44 @@ class MasterSoalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'id_ujian' => 'required|exists:ujians,id',
+            'id_kategori_soal' => 'required|exists:kategoris,id',
+            'id_kategori_jawaban' => 'required|exists:kategoris,id',
+            'jawaban_benar' => 'required',
+            'poin' => 'required|numeric|min:0',
+        ]);
+
+        // Handle soal: text or image
+        $soalValue = $request->file('soal')
+            ? $request->file('soal')->store('soal_images', 'public')
+            : $request->input('soal');
+
+        // Handle pilihan 1-4: text or image
+        $pilihan = [];
+        for ($i = 1; $i <= 4; $i++) {
+            $key = "pilihan_$i";
+            $pilihan[$key] = $request->file($key)
+                ? $request->file($key)->store("pilihan_images", "public")
+                : $request->input($key);
+        }
+
+        // Simpan data
+        Soal::create([
+            'id_ujian' => $request->id_ujian,
+            'id_kategori_soal' => $request->id_kategori_soal,
+            'soal' => $soalValue,
+            'id_kategori_jawaban' => $request->id_kategori_jawaban,
+            'pilihan_1' => $pilihan['pilihan_1'],
+            'pilihan_2' => $pilihan['pilihan_2'],
+            'pilihan_3' => $pilihan['pilihan_3'],
+            'pilihan_4' => $pilihan['pilihan_4'],
+            'jawaban_benar' => $request->jawaban_benar,
+            'poin' => $request->poin
+        ]);
+
+        return redirect()->back()->with('success', 'Soal berhasil disimpan!');
     }
 
     /**
@@ -49,7 +99,10 @@ class MasterSoalController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ujian = Ujian::all();
+        $kategori = Kategori::all();
+        $soal = Soal::findOrFail(base64_decode($id));
+        return view('soal.edit', compact('soal', 'ujian', 'kategori'));
     }
 
     /**
@@ -57,7 +110,59 @@ class MasterSoalController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $soal = Soal::findOrFail($id);
+        $request->validate([
+            'id_ujian' => 'required|exists:ujians,id',
+            'id_kategori_soal' => 'required|exists:kategoris,id',
+            'id_kategori_jawaban' => 'required|exists:kategoris,id',
+            'jawaban_benar' => 'required',
+            'poin' => 'required|numeric|min:0',
+        ]);
+
+        // Handle soal: text or image
+        $soalValue = $soal->soal; // Default to existing value
+        if ($request->hasFile('soal')) {
+            // If new file uploaded, store it
+            $soalValue = $request->file('soal')->store('soal_images', 'public');
+        } elseif ($request->filled('soal') && !$request->hasFile('soal')) {
+            // If text input and no file uploaded, use the text value
+            $soalValue = $request->input('soal');
+        }
+        // Otherwise keep the existing value
+
+        // Handle pilihan 1-4: text or image
+        $pilihan = [];
+        for ($i = 1; $i <= 4; $i++) {
+            $key = "pilihan_$i";
+            $currentValue = $soal->$key; // Get current value from database
+
+            if ($request->hasFile($key)) {
+                // If new file uploaded, store it
+                $pilihan[$key] = $request->file($key)->store("pilihan_images", "public");
+            } elseif ($request->filled($key) && !$request->hasFile($key)) {
+                // If text input and no file uploaded, use the text value
+                $pilihan[$key] = $request->input($key);
+            } else {
+                // Otherwise keep the existing value
+                $pilihan[$key] = $currentValue;
+            }
+        }
+
+        // Simpan data
+        $soal->update([
+            'id_ujian' => $request->id_ujian,
+            'id_kategori_soal' => $request->id_kategori_soal,
+            'soal' => $soalValue,
+            'id_kategori_jawaban' => $request->id_kategori_jawaban,
+            'pilihan_1' => $pilihan['pilihan_1'],
+            'pilihan_2' => $pilihan['pilihan_2'],
+            'pilihan_3' => $pilihan['pilihan_3'],
+            'pilihan_4' => $pilihan['pilihan_4'],
+            'jawaban_benar' => $request->jawaban_benar,
+            'poin' => $request->poin
+        ]);
+
+        return redirect()->back()->with('success', 'Soal berhasil disimpan!');
     }
 
     /**
@@ -65,7 +170,10 @@ class MasterSoalController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $soal = Soal::findOrFail($id);
+        $soal->delete();
+
+        return redirect()->route('master_soal.index')->with('soal berhasil di hapus');
     }
     public function createAll(string $id)
     {
